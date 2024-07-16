@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: webcolor
 spec:
-  replicas: 10
+  replicas: 15
   selector:
     matchLabels:
       app: webcolor
@@ -23,6 +23,7 @@ kind: Service
 metadata:
   name: webcolor
 spec:
+  type: LoadBalancer
   selector:
     app: webcolor
   ports:
