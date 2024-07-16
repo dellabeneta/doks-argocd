@@ -8,10 +8,10 @@ resource "digitalocean_kubernetes_cluster" "argocd" {
     size       = "s-2vcpu-2gb"
     node_count = 3
 
-    taint {
-      key    = "workloadKind"
-      value  = "database"
-      effect = "NoSchedule"
-    }
+    # taint {
+    #   key    = "workloadKind"
+    #   value  = "database"
+    #   effect = "NoSchedule"
+    # }
   }
 }
