@@ -6,7 +6,9 @@ resource "digitalocean_kubernetes_cluster" "argocd" {
   node_pool {
     name       = "worker-pool"
     size       = "s-2vcpu-2gb"
-    node_count = 2
+    auto_scale = true
+    min_nodes  = 2
+    max_nodes  = 5
 
     # taint {
     #   key    = "workloadKind"
